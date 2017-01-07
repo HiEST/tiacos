@@ -1,0 +1,4 @@
+FROM cpd_test:v1
+RUN apt-get install -y nginx
+ADD nginx/default /etc/nginx/sites-available/default
+CMD nginx -g 'daemon off;'
