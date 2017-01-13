@@ -10,7 +10,7 @@ Vagrant Box fot TIACOS Labs
 
 ##Reprovision:
 If something changes in the vagrant configuration and you need to reprovision, 
- run `vagrant up **provision**`
+ run `vagrant up provision`
 
 
 ##Running vagrant ssh in Windows:
