@@ -18,11 +18,14 @@ If something changes in the vagrant configuration and you need to reprovision,
 An SSH client is generally not distributed with Windows by default. Because of this, if you are on Windows you have two options to ssh into the virtual machines:
 
 **Option 1**
+
 You can follow this recommendations:
 https://docs-v1.vagrantup.com/v1/docs/getting-started/ssh.html
 
 **Option 2**
+
 If you have Windows 10 release 1607 or above (see https://technet.microsoft.com/en-gb/windows/release-info):
-You can install Canonical Bash for Windows (instructions: https://msdn.microsoft.com/en-us/commandline/wsl/about)
+-You can install Canonical Bash for Windows (instructions: https://msdn.microsoft.com/en-us/commandline/wsl/about)
 and then in a windows command shel (cmd.exe) run:
-doskey ssh=bash -c "ssh $1"
+
+'doskey ssh=bash -c "ssh $1"'
