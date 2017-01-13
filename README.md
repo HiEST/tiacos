@@ -28,4 +28,4 @@ If you have Windows 10 release 1607 or above (see https://technet.microsoft.com/
 -You can install Canonical Bash for Windows (instructions: https://msdn.microsoft.com/en-us/commandline/wsl/about)
 and then in a windows command shel (cmd.exe) run:
 
-'doskey ssh=bash -c "ssh $1"'
+`doskey ssh=bash -c "ssh $1"`
