@@ -17,3 +17,21 @@ file { '/home/ubuntu/data':
   group  => 'ubuntu',
 }
 
+file { '/home/ubuntu/.jupyter':
+  ensure => 'directory',
+  owner    => 'ubuntu',
+  group    => 'ubuntu',         
+}
+
+
+file { '/home/ubuntu/.jupyter/jupyter_notebook_config.py':
+          ensure => present,
+          replace => true,
+          owner    => 'ubuntu',
+          group    => 'ubuntu',          
+          source => "/vagrant/puppet/files/jupyter_notebook_config.py",
+          require => File['/home/ubuntu/.jupyter']
+}
+
+ 
+

@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	  end
 	  
 	  tiacos_config.vm.provision :shell, :path => "install_puppet.sh"
-
+	  tiacos_config.vm.network "forwarded_port", guest: 8888, host: 8888
 	  #puppet config
 	  tiacos_config.vm.provision "puppet" do |puppet|
 	    puppet.module_path = "puppet/modules"

@@ -22,6 +22,14 @@ package { ['curl', 'unzip', 'vim', 'make', 'gcc', 'g++', 'automake', 'libtool', 
   require => Exec['apt-get update']
 }
 
+
+python::pip { 'jupyter' :
+    pkgname       => 'jupyter',
+    require => Exec['pip-upgrade']
+
+}
+
+
 service { "docker":
     ensure  => "running",
     enable  => "true",
@@ -37,6 +45,9 @@ class { 'python' :
     before     => Package['python-nose', 'python-numpy', 'python-scipy', 'python-nose']
 }
 
-#python::pip { 'theano' :
-#    pkgname    => 'Theano',
-#}
+
+exec { 'pip-upgrade':
+ cwd     => "/usr/local/bin",
+ command => "pip install --upgrade pip",
+ require => Class['Python']
+}
