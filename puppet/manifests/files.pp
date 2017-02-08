@@ -33,5 +33,13 @@ file { '/home/ubuntu/.jupyter/jupyter_notebook_config.py':
           require => File['/home/ubuntu/.jupyter']
 }
 
+file { '/root/clean_image.sh':
+          ensure => present,
+          replace => true,
+          owner    => 'ubuntu',
+          group    => 'ubuntu',          
+          mode     => '0755',
+          source => "/vagrant/puppet/files/clean_image.sh"
+}
  
 
