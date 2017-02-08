@@ -6,10 +6,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :tiacos do |tiacos_config|
 	  # Every Vagrant virtual environment requires a box to build off of.
 	  tiacos_config.vm.box = "ubuntu/xenial64"
+	  #tiacos_config.vm.box = "davidcarrera/tiacos"
 
 	  # required by couchbase-cli
 	  tiacos_config.ssh.shell = "export LC_ALL=\"en_US.UTF-8\""
 	  tiacos_config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
 
 	  # Create a private network, which allows host-only access to the machine
 	  # using a specific IP.
@@ -23,6 +25,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	  end
 	  
 	  tiacos_config.vm.provision :shell, :path => "install_puppet.sh"
+          tiacos_config.vm.provision "shell", inline: <<-SHELL
+              echo "ubuntu:ubuntu" | sudo chpasswd
+          SHELL
+
 	  tiacos_config.vm.network "forwarded_port", guest: 8888, host: 8888
 	  #puppet config
 	  tiacos_config.vm.provision "puppet" do |puppet|

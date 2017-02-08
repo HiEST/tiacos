@@ -17,17 +17,12 @@ apt::source { 'docker':
 }
 
 
-package { ['curl', 'unzip', 'vim', 'make', 'gcc', 'g++', 'automake', 'libtool', 'python-numpy', 'python-nose', 'python-scipy', 'libopenblas-dev', 'git', 'docker-engine', 'linux-image-extra-virtual', "linux-image-extra-$kernelrelease"]:
+package { ['curl', 'unzip', 'vim', 'make', 'gcc', 'g++', 'automake', 'libtool', 'python-numpy', 'python-nose', 'python-scipy', 'libopenblas-dev', 'git', 'docker-engine', 'linux-image-extra-virtual', "linux-image-extra-$kernelrelease", 'python3-pip']:
   ensure => present,
   require => Exec['apt-get update']
 }
 
 
-python::pip { 'jupyter' :
-    pkgname       => 'jupyter',
-    require => Exec['pip-upgrade']
-
-}
 
 
 service { "docker":
@@ -46,8 +41,31 @@ class { 'python' :
 }
 
 
+exec { 'jupyter-ipykernel': 
+     command => "python3 -m pip install ipykernel",
+     require => Exec["pip3-upgrade"]
+}
+
+exec { 'jupyter-ipykernel-install': 
+     command => "python3 -m ipykernel install --user",
+     require => Exec["jupyter-ipykernel"]
+}
+
+python::pip { 'jupyter' :
+    pkgname       => 'jupyter',
+    require => Exec['pip-upgrade', 'pip3-upgrade']
+
+}
+
+
 exec { 'pip-upgrade':
  cwd     => "/usr/local/bin",
  command => "pip install --upgrade pip",
+ require => Class['Python']
+}
+
+exec { 'pip3-upgrade':
+ cwd     => "/usr/local/bin",
+ command => "pip3 install --upgrade pip",
  require => Class['Python']
 }
