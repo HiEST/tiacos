@@ -42,4 +42,12 @@ file { '/root/clean_image.sh':
           source => "/vagrant/puppet/files/clean_image.sh"
 }
  
+file { '/home/ubuntu/run_jupyter.sh':
+          ensure => present,
+          replace => true,
+          owner    => 'ubuntu',
+          group    => 'ubuntu',          
+          mode     => '0755',
+          source => "/vagrant/puppet/files/run_jupyter.sh"
+}
 
