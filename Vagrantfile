@@ -5,15 +5,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :tiacos do |tiacos_config|
 	  # Every Vagrant virtual environment requires a box to build off of.
-	  #tiacos_config.vm.box = "ubuntu/xenial64"
-	  tiacos_config.vm.box = "davidcarrera/tiacos"
-	  tiacos_config.vm.box_version = "0.2"
+	  tiacos_config.vm.box = "ubuntu/xenial64"
+	  #tiacos_config.vm.box = "davidcarrera/tiacos"
+	  #tiacos_config.vm.box_version = "0.2"
 
 	  # required by couchbase-cli
 	  tiacos_config.ssh.shell = "export LC_ALL=\"en_US.UTF-8\""
 	  tiacos_config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 	  tiacos_config.ssh.username = "ubuntu"
-
+ 
+ 	  tiacos_config.vm.provider :virtualbox do |v|
+            #v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4", "--uartmode1", "file", "/tmp/tiacos_vm-console.log"]
+            v.customize ["modifyvm", :id, "--uartmode1", "disconnected"]
+      end
+  
 
 	  # Create a private network, which allows host-only access to the machine
 	  # using a specific IP.
