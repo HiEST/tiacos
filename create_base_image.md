@@ -9,3 +9,8 @@ vagrant package --base tiacos-environment_tiacos_1486544985047_75797 --output ti
 ==> tiacos-environment_tiacos_1486544985047_75797: Compressing package to: /Users/dcarrera/Desktop/tiacos-environment/tiacos_base.0.1.box
 ```
 
+```
+curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/tiacos/version/0.3/provider/virtualbox/upload?access_token=<token>
+```
+Following the steps of:
+https://atlas.hashicorp.com/help/vagrant/boxes/create
