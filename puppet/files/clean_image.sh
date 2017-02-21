@@ -52,8 +52,8 @@ dd if=/dev/zero of=/boot/whitespace bs=1024 count=$count;
 rm /boot/whitespace;
 
 # Whiteout swap 
-swappart=`cat /proc/swaps | tail -n1 | awk -F ' ' '{print $1}'`
-swapoff $swappart;
-dd if=/dev/zero of=$swappart;
-mkswap $swappart;
-swapon $swappart;
+#swappart=`cat /proc/swaps | tail -n1 | awk -F ' ' '{print $1}'`
+#swapoff $swappart;
+#dd if=/dev/zero of=$swappart;
+#mkswap $swappart;
+#swapon $swappart;
