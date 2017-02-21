@@ -5,9 +5,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :tiacos do |tiacos_config|
 	  # Every Vagrant virtual environment requires a box to build off of.
-	  tiacos_config.vm.box = "ubuntu/xenial64"
-	  #tiacos_config.vm.box = "davidcarrera/tiacos"
-	  #tiacos_config.vm.box_version = "0.2"
+	  #tiacos_config.vm.box = "ubuntu/xenial64"
+	  tiacos_config.vm.box = "davidcarrera/tiacos"
+	  tiacos_config.vm.box_version = "0.3"
 
 	  # required by couchbase-cli
 	  tiacos_config.ssh.shell = "export LC_ALL=\"en_US.UTF-8\""
