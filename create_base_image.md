@@ -9,6 +9,8 @@ vagrant package --base tiacos-environment_tiacos_1486544985047_75797 --output ti
 ==> tiacos-environment_tiacos_1486544985047_75797: Compressing package to: /Users/dcarrera/Desktop/tiacos-environment/tiacos_base.0.1.box
 ```
 
+To upload, you need to create first a new release, and then create a provider (without uploading an image). After that, it can be uploaded with the API as described below
+
 ```
 curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/tiacos/version/0.3/provider/virtualbox/upload?access_token=<token>
 ```
