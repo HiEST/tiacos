@@ -19,177 +19,126 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="ss/main.css" />
-    <link rel="stylesheet" href="/css/codehighlight.css" />
-    <link rel="stylesheet" href="/css/lechef.css" />
-</head>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/codehighlight.css" />
+    <link rel="stylesheet" href="css/lechef.css" />
+  </head>
+
+  <body>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <header class="site-header navbar navbar-default" role="navigation">
+    </header>
 
 
-    <body>
-      <!-- load jQuery before the page content so it can be used in the examples -->
-      <script src="js/jquery-2.1.1.min.js"></script>
+  <div class="container">
+    <div class="jumbotron">
 
-      <header class="site-header navbar navbar-default" role="navigation">
- <!-- <div class="container">
-      <ul class="nav navbar-nav">
-        <li><a class="site-title" href="/lechef/">lechef Home</a></li>
-        
-          
-          <li><a class="page-link" href="/lechef/documentation/">Documentation</a></li>
-          
-        
-          
-        
-          
-        
-          <li><a class="page-link" href="https://github.com/vkaravir/lechef">Code on GitHub</a></li>
-      </ul>
-  </div>-->
-</header>
-
-
-      <div class="container">
-        <div class="jumbotron">
-
-  <h1>TIACOS - Logic Circuit Exercise Framework using lechef</h1>
-  <blockquote>Understanding logic circuits is essential in understanding how computers work deep down. The lechef framework enables creation of exercises for practising and understanding the behavior of the basic logical gates, and circuits made from those gates.
-  </blockquote>
-</div>
-  <!--<div class="first-example lechef-exercise">
-    <h2>Your First Logic Circuit Exercise Example</h2>
-    <p><strong>Your task: </strong> Toggle the input and output values of each component in the logic circuit below. As you might know, the output of an AND gate is true (1) only if both of its inputs are true. Use the Reset button to reset the values, and the Feedback button to ask for feedback on your solution at the time.</p>
-    <div class="container">
-      <div class="row">
-        <div id="first-example-feedback" class="circuit-container"></div>
-        <div id="first-example" class="circuit-container"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <button class="btn btn-info btn-sm btn-block reset">Reset</button>
-        </div>
-        <div class="col-md-6">
-          <button class="btn btn-info btn-sm btn-block feedback">​Feedback​</button>
-        </div>
-      </div>
+      <h1>TIACOS - Logic Circuit Exercise Framework using lechef</h1>
+      <blockquote>Understanding logic circuits is essential in understanding how computers work deep down. The lechef framework enables creation of exercises for practising and understanding the behavior of the basic logical gates, and circuits made from those gates.
+      </blockquote>
     </div>
-  </div>
-  <script>
-    $(function() {
-      var circuit = new LogicCircuit({element: $("#first-example")});
-      var andComp = circuit.andComponent({left: 250, top: 60});
-      var in1 = circuit.inputComponent("x", {left: 50, top: 10});
-      var in2 = circuit.inputComponent("y", {left: 50, top: 110});
-      var out = circuit.outputComponent("f", {left: 400, top: 65});
-      andComp.inputComponent(0, in1);
-      andComp.inputComponent(1, in2);
-      out.inputComponent(0, andComp);
-
-      var simulation = new CircuitSimulationExercise(circuit, {input: {x: true, y: false}});
-      $(".first-example .reset").click(function(event){
-          event.preventDefault();
-          simulation.reset();
-      });
-      $(".first-example .feedback").click(function(event){
-          event.preventDefault();
-          simulation.grade(function(feedback) {
-            new CircuitSimulationFeedback(simulation.options, feedback, {element: $("#first-example-feedback")});
-            $("#first-example-feedback .lechef-close").addClass("btn btn-success btn-xs");
-          });
-      });
-    });
-  </script>
-
-<h2>Features</h2>
-<ul>
-  <li>Two types of exercises:
-    <ul>
-      <li>simulation of a given circuit with given values (like the one above) </li>
-      <li>design of a circuit based on a truth table (or however you like to formulate the question)</li>
-    </ul>
-  </li>
-  <li>Visual, interactive feedback for the learner</li>
-  <li>Support for the basic gates: AND, OR, NOT, NAND, NOR, XOR, EQV</li>
-</ul>
 
 <h2>Documentation</h2>
 
 <p>In the <a href="documentation">documentation</a>, you can find some more examples. It will also introduce you to the configuration options.</p>-->
 
-<div class="design-example lechef-exercise">
-  <h2>Example of circuit design assignment</h2>
-  <p>Construct a circuit using AND, OR, and NOT components that has the following truth-table.</p>
+    <div class="design-example lechef-exercise">
+      <h2>Example of circuit design assignment</h2>
+      <p>Construct a circuit using AND, OR, and NOT components that has the following truth-table.</p>
 
-  <div class="container">
-    <div class="row">
-      <table>
-        <thead>
-          <tr><th>X</th><th>Y</th><th>G</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>0</td><td>1</td></tr>
-          <tr><td>0</td><td>1</td><td>1</td></tr>
-          <tr><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>0</td><td>0</td><td>0</td></tr>
-        </tbody>
-      </table>
-      <div id="design-example-feedback" class="circuit-container"></div>
-      <div id="design-example" class="circuit-container"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <button class="btn btn-info btn-sm btn-block reset">Reset</button>
-      </div>
-      <div class="col-md-6">
-        <button class="btn btn-info btn-sm btn-block feedback">​Feedback​</button>
-      </div>
-    </div>
+      <div class="container">
+        <div class="row">
+          <table>
+            <thead>
+              <tr><th>X</th><th>Y</th><th>G</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>0</td><td>1</td></tr>
+              <tr><td>0</td><td>1</td><td>1</td></tr>
+              <tr><td>1</td><td>1</td><td>1</td></tr>
+              <tr><td>0</td><td>0</td><td>0</td></tr>
+            </tbody>
+          </table>
+          <div id="design-example-feedback" class="circuit-container"></div>
+          <div id="design-example" class="circuit-container"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-info btn-sm btn-block reset">Reset</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-info btn-sm btn-block feedback">​Feedback​</button>
+          </div>
+        </div>
 
-  </div>
-</div>
-<script>
-  $(function(){
-    var exer = new CircuitExercise({element: $("#design-example"), input: ["x", "y"], output: "g",
-      grading: [{input: {x: true, y: false}, output: true},
-        {input: {x: false, y: true}, output: true},
-        {input: {x: true, y: true}, output: true},
-        {input: {x: false, y: false}, output: false}], components: ["and", "not", "or"], addSubmit: false});
-    var styleButtons = function() {
-      // add bootstrap classes to style the buttons
-      exer.element.find("button").addClass("btn btn-success btn-sm");
-    };
-    styleButtons();
-    $(".design-example .reset").click(function(event){
-      event.preventDefault();
-      exer.reset();
-      // reapply the Bootstrap button styles
-      styleButtons();
-    });
-    $(".design-example .feedback").click(function(event){
-        event.preventDefault();
-        exer.grade(function(feedback) {
-          new CircuitExerciseFeedback(exer.options, feedback, {element: $("#design-example-feedback")});
-          $("#design-example-feedback .lechef-close").addClass("btn btn-success btn-xs");
+      </div>
+    </div>
+    <script>
+      $(function(){
+        var exer = new CircuitExercise({element: $("#design-example"), input: ["x", "y"], output: "g",
+          grading: [{input: {x: true, y: false}, output: true},
+            {input: {x: false, y: true}, output: true},
+            {input: {x: true, y: true}, output: true},
+            {input: {x: false, y: false}, output: false}], components: ["and", "not", "or"], addSubmit: false});
+        var styleButtons = function() {
+          // add bootstrap classes to style the buttons
+          exer.element.find("button").addClass("btn btn-success btn-sm");
+        };
+        styleButtons();
+        $(".design-example .reset").click(function(event){
+          event.preventDefault();
+          exer.reset();
+          // reapply the Bootstrap button styles
+          styleButtons();
         });
-    });
-  });
-</script>
-<style>
-</style>
+        $(".design-example .feedback").click(function(event){
+            event.preventDefault();
+            exer.grade(function(feedback) {
+              new CircuitExerciseFeedback(exer.options, feedback, {element: $("#design-example-feedback")});
+              $("#design-example-feedback .lechef-close").addClass("btn btn-success btn-xs");
+            });
+        });
+      });
+    </script>
 
 
-      </div>
 
-      <footer class="site-footer container">
+    <script>
+      $(function() {
+        var circuit = new LogicCircuit({element: $("#first-example")});
+        var andComp = circuit.andComponent({left: 250, top: 60});
+        var in1 = circuit.inputComponent("x", {left: 50, top: 10});
+        var in2 = circuit.inputComponent("y", {left: 50, top: 110});
+        var out = circuit.outputComponent("f", {left: 400, top: 65});
+        andComp.inputComponent(0, in1);
+        andComp.inputComponent(1, in2);
+        out.inputComponent(0, andComp);
 
-  <h2 class="footer-heading">End of exercise</h2>
- 
+        var simulation = new CircuitSimulationExercise(circuit, {input: {x: true, y: false}});
+        $(".first-example .reset").click(function(event){
+            event.preventDefault();
+            simulation.reset();
+        });
+        $(".first-example .feedback").click(function(event){
+            event.preventDefault();
+            simulation.grade(function(feedback) {
+              new CircuitSimulationFeedback(simulation.options, feedback, {element: $("#first-example-feedback")});
+              $("#first-example-feedback .lechef-close").addClass("btn btn-success btn-xs");
+            });
+        });
+      });
+    </script>
 
-</footer>
 
 
-      <script src="/js/jquery-ui-1.11.min.js"></script>
-      <script src="/js/jquery.ui.touch-punch.min.js"></script>
-      <script src="/js/snap.svg-min.js"></script>
-      <script src="/js/lechef.js"></script>
-    </body>
+    <footer class="site-footer container">
+      <h2 class="footer-heading">End of exercise</h2>
+    </footer>
+
+
+    <script src="js/jquery-ui-1.11.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/lechef.js"></script>
+  </body>
 </html>
