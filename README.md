@@ -1,7 +1,18 @@
 Vagrant Box fot TIACOS Labs
 ==================================
 
-##Steps:
+##Software Required:
+- Vagrant: https://www.vagrantup.com/
+- VirtualBox: https://www.virtualbox.org
+- Git to clone this repository and keep up to date
+
+##Steps to prepare the environment:
+1. Download and install the latest version of VirtualBox
+2. Download and install the latest version of Vagrant
+3. Clone this repository: `git clone git@github.com:HiEST/tiacos.git`
+4. Run the box
+
+##Steps to run the Box:
 1. run `vagrant up`
 2. run `vagrant ssh` to log into the machine
 3. run `vagrant halt` to stop the VM
