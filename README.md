@@ -5,6 +5,8 @@ Vagrant Box fot TIACOS Labs
 - Vagrant: https://www.vagrantup.com/
 - VirtualBox: https://www.virtualbox.org
 - Git to clone this repository and keep up to date
+- The following box is used as the base box: https://atlas.hashicorp.com/davidcarrera/boxes/tiacos
+- Alternatively, a base ubuntu box can be used by changing the Vagrantfile
 
 ##Steps to prepare the environment:
 1. Download and install the latest version of VirtualBox
