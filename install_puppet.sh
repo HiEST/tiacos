@@ -417,6 +417,14 @@ install_puppet_package() {
       fi
       ;;
     "deb")
+ ##ADDED DCARRERA
+      while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do
+        sleep 1
+      done
+      while sudo fuser /var/lib/apt/lists/lock >/dev/null 2>&1; do
+        sleep 1
+      done
+##ADDED DCARRERA
       apt-get update -y
       if test "$version" = 'latest'; then
         apt-get install -y puppet-common puppet
