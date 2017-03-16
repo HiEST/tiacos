@@ -424,10 +424,16 @@ install_puppet_package() {
       while sudo fuser /var/lib/apt/lists/lock >/dev/null 2>&1; do
         sleep 1
       done
+      until apt-get update -y
+      do
+         echo "Try again"
+      done
 ##ADDED DCARRERA
-      apt-get update -y
       if test "$version" = 'latest'; then
-        apt-get install -y puppet-common puppet
+        until apt-get install -y puppet-common puppet
+        do
+           echo "Try again"
+        done
       else
         case $platform in
           "ubuntu")
