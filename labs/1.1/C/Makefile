@@ -4,3 +4,4 @@ all:kseq.h kseq_test.c
 
 clean:
 		rm -f *.o kseq_test
+		rm -f *.o kseq_test_static
