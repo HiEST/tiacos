@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TIACOS - logic circuit exercise framework based on lechef</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Open Graph stuff -->
+    <meta property="og:image" content="http://vkaravir.github.com/lechef/img/lechef-thumb.png" />
+    <meta property="og:image:secure_url" content="https://vkaravir.github.com/lechef/img/lechef-thumb.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+    <meta property="og:title" content="lechef - logic circuit exercise framework" />
+    <meta property="og:url" content="http://vkaravir.github.com/lechef/">
+    <meta property="og:description" content="Lechef - Logic Circuit Exercise Framework - is a JavaScript library for creating interactive exercises with immediate feedback on the behavior of basic logic gates and circuits made of the gates.">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/codehighlight.css" />
+    <link rel="stylesheet" href="css/lechef.css" />
+  </head>
+
+  <body>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui-1.11.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/lechef.js"></script>
+    
+    <header class="site-header navbar navbar-default" role="navigation">
+    </header>
+
+
+  <div class="container">
+    <div class="jumbotron">
+
+      <h1>TIACOS - Logic Circuit Exercise Framework using lechef</h1>
+      <blockquote>Understanding logic circuits is essential in understanding how computers work deep down. The lechef framework enables creation of exercises for practising and understanding the behavior of the basic logical gates, and circuits made from those gates.
+      </blockquote>
+    </div>
+
+  <h2>Documentation</h2>
+
+  <p>In the <a href="documentation">documentation</a>, you can find some more examples. It will also introduce you to the configuration options.</p>
+
+
+
+   <div class="design-sample lechef-exercise">
+      <h2>Example of circuit design assignment</h2>
+      <p>Construct a circuit using AND, OR, and NOT components that has the following truth-table.</p>
+
+      <div class="container">
+        <div class="row" style="height: 575px;">
+          <div id="design-sample-feedback" class="circuit-container"></div>
+          <div id="design-sample" class="circuit-container"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-info btn-sm btn-block reset">Reset</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-info btn-sm btn-block feedback">​Feedback​</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      $(function(){
+        var exer = new CircuitExercise({element: $("#design-sample"), input: ["k0", "k1", "k2", "k3", "c0", "c1"], output: ["o1"],
+          grading: [{input: {k0: false, k1: false, k2: false, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: false, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: true, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: false, c0: false, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: true, c0: false, c1: false}, output:  false},
+
+
+{input: {k0: false, k1: false, k2: false, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: false, k2: false, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: true, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: false, c0: false, c1: true}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: true, c0: false, c1: true}, output:  false},
+
+
+{input: {k0: false, k1: false, k2: false, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: false, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: false, k2: true, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: false, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: false, k1: true, k2: true, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: false, k2: true, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: false, k3: true, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: false, c0: true, c1: false}, output:  false},
+{input: {k0: true, k1: true, k2: true, k3: true, c0: true, c1: false}, output:  false},
+
+
+
+{input: {k0: false, k1: false, k2: false, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: false, k2: false, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: false, k2: true, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: false, k2: true, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: true, k2: false, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: true, k2: false, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: true, k2: true, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: false, k1: true, k2: true, k3: true, c0: true, c1: true}, output:  false},
+{input: {k0: true, k1: false, k2: false, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: false, k2: false, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: false, k2: true, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: false, k2: true, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: true, k2: false, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: true, k2: false, k3: true, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: true, k2: true, k3: false, c0: true, c1: true}, output:  true},
+{input: {k0: true, k1: true, k2: true, k3: true, c0: true, c1: true}, output:  true}], components: ["and", "not", "or"], addSubmit: false});
+        var styleButtons = function() {
+          // add bootstrap classes to style the buttons
+          exer.element.find("button").addClass("btn btn-success btn-sm");
+        };
+        styleButtons();
+        $(".design-sample .reset").click(function(event){
+          event.preventDefault();
+          exer.reset();
+          // reapply the Bootstrap button styles
+          styleButtons();
+        });
+        $(".design-sample .feedback").click(function(event){
+            event.preventDefault();
+            exer.grade(function(feedback) {
+              new CircuitExerciseFeedback(exer.options, feedback, {element: $("#design-sample-feedback")});
+              $("#design-sample-feedback .lechef-close").addClass("btn btn-success btn-xs");
+            });
+        });
+      });
+    </script>
+
+  </body>
+</html>
