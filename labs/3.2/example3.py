@@ -2,8 +2,7 @@ import os
 import sys
 
 def child():
-   print('\nThis is the child process.\n')
-   os._exit(0)  
+   os.execl('/usr/bin/python3', '/usr/bin/python3', '/home/ubuntu/labs/3.2/print_pid.py')
 
 def parent(goal):
    num = 0;
@@ -14,15 +13,8 @@ def parent(goal):
         child()
      else:
         pids = (os.getpid(), num, newpid)
-        print("This is the parent process.\n")
+        print("This is the parent process. PID: %d, child #%d - PID: %d\n" %  pids)
 
-
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
-i = 0
-while i < len(sys.argv):
-	print ('i-th parameter: ', sys.argv[i])
-	i = i + 1 
 
 try:
    numchilds = int(sys.argv[1])

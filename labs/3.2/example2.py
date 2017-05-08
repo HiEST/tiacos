@@ -2,7 +2,7 @@ import os
 import sys
 
 def child():
-   print('\nThis is the child process.\n')
+   print('\nThis is the child process. PID: ',  os.getpid())
    os._exit(0)  
 
 def parent(goal):
@@ -14,15 +14,10 @@ def parent(goal):
         child()
      else:
         pids = (os.getpid(), num, newpid)
-        print("This is the parent process.\n")
+        print("This is the parent process. PID: %d, child #%d - PID: %d\n" %  pids)
 
-
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
-i = 0
-while i < len(sys.argv):
-	print ('i-th parameter: ', sys.argv[i])
-	i = i + 1 
+#print('Number of arguments:', len(sys.argv), 'arguments.')
+#print('Argument List:', str(sys.argv))
 
 try:
    numchilds = int(sys.argv[1])

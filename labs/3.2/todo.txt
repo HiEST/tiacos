@@ -1,4 +1,0 @@
-crea tans fills com el primer parametre i fa print del segon parametre
-crea tans fills com el primer parametre i fa print del pid
-crea tans fills com el primer parametre i que fan exec d'un programa que fa print del pid
-crea 1 fill i el mata als 3 segons
