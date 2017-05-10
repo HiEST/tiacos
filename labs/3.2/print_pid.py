@@ -1,5 +1,6 @@
 import os
+import sys
 
 print('Print PID program. My PID is: ',  os.getpid())
-os._exit(0)  
+sys.exit(0)  
 

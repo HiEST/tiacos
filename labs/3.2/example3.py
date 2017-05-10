@@ -12,8 +12,8 @@ def parent(goal):
      if newpid == 0:
         child()
      else:
-        pids = (os.getpid(), num, newpid)
-        print("This is the parent process. PID: %d, child #%d - PID: %d\n" %  pids)
+        ownpid = os.getpid()
+        print("This is the parent process. PID: %d, child #%d - PID: %d\n" %  (ownpid, num, newpid))
 
 
 try:

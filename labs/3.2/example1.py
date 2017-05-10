@@ -3,7 +3,7 @@ import sys
 
 def child():
    print('\nThis is the child process.\n')
-   os._exit(0)  
+   sys.exit(0)  
 
 def parent(goal):
    num = 0;
