@@ -51,3 +51,11 @@ file { '/home/ubuntu/run_jupyter.sh':
           source => "/vagrant/puppet/files/run_jupyter.sh"
 }
 
+file { '/etc/apt/apt.conf.d/10periodic':
+          ensure => present,
+          replace => true,
+          owner    => 'ubuntu',
+          group    => 'ubuntu',
+          mode     => '0644',
+          source => "/vagrant/puppet/files/10periodic"
+}
