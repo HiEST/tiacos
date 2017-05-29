@@ -55,6 +55,7 @@ while i < rows:
     chunk1 = os.read(fd_source1,cols)
     chunk2 = os.read(fd_source2,cols)
     j = 0
+    val = bytearray(cols)
     while j < cols:
        val[j] = chunk1[j] + chunk2[j]
        print("(",i,",",j,")=",val[j])
