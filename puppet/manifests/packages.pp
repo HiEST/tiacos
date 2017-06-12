@@ -17,7 +17,7 @@ apt::source { 'docker':
 }
 
 
-package { ['curl', 'unzip', 'vim', 'make', 'gcc', 'g++', 'automake', 'libtool', 'python-numpy', 'python-nose', 'python-scipy', 'libopenblas-dev', 'git', 'docker-engine', 'linux-image-extra-virtual', "linux-image-extra-$kernelrelease", 'python3-pip', 'zlib1g-dev', 'gnuplot']:
+package { ['curl', 'unzip', 'vim', 'make', 'gcc', 'g++', 'automake', 'libtool', 'python3-numpy', 'python3-nose', 'python3-scipy', 'libopenblas-dev', 'git', 'docker-engine', 'linux-image-extra-virtual', "linux-image-extra-$kernelrelease", 'python3-pip', 'zlib1g-dev', 'gnuplot']:
   ensure => present,
   require => Exec['apt-get update']
 }
