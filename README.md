@@ -12,9 +12,10 @@ Vagrant Box fot TIACOS Labs
 1. Download and install the latest version of VirtualBox
 2. Download and install the latest version of Vagrant
 3. Clone this repository: `git clone git@github.com:HiEST/tiacos.git`
-4. Run the box
+4. Go to the repository folder (tiacos) just cloned
+5. Run the box
 
-##Steps to run the Box:
+##Steps to run the Box (from the tiacos repository folder):
 1. run `vagrant up`
 2. run `vagrant ssh` to log into the machine
 3. run `vagrant halt` to stop the VM
