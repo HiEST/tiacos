@@ -1,3 +1,0 @@
-FROM cpd_test:v1
-ADD web /web
-CMD python /web/webserver.py

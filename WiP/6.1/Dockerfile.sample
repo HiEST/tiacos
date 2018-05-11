@@ -1,4 +1,0 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y python-pip && pip install Flask
-RUN echo "hello CPD" > /cpd.txt
