@@ -41,6 +41,8 @@ GEM
       archive-tar-minitar
       excon (>= 0.38.0)
       json
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     excon (0.39.5)
     extlib (0.9.16)
     facter (2.2.0)
@@ -88,6 +90,9 @@ GEM
       json_pure
     highline (1.6.21)
     hocon (0.0.4)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     inflecto (0.0.2)
     inifile (2.0.2)
     ipaddress (0.8.0)
@@ -106,7 +111,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    netrc (0.7.7)
+    netrc (0.11.0)
     nokogiri (1.5.11)
     puppet (3.7.0)
       facter (> 1.6, < 3)
@@ -131,9 +136,11 @@ GEM
       builder
       nokogiri (>= 1.4.1)
       trollop
-    rest-client (1.7.2)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     retriable (1.4.1)
     rspec (2.99.0)
       rspec-core (~> 2.99.0)
